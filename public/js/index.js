@@ -2,11 +2,12 @@
 import '@babel/polyfill';
 // import _ from 'lodash';
 import { displayMap } from './mapbox';
-import { login } from './login';
+import { login, logout } from './login';
 
 // DOM ELEMENTS
 const mapBox = document.getElementById('map');
 const loginForm = document.querySelector('.form');
+const logOutBtn = document.querySelector('.nav__el--logout');
 
 // DELEGATION
 if (mapBox) {
@@ -14,7 +15,7 @@ if (mapBox) {
   displayMap(locations);
 }
 
-if (loginForm)
+if (loginForm) {
   loginForm.addEventListener('submit', (e) => {
     // Prevent default behavior
     e.preventDefault();
@@ -22,3 +23,6 @@ if (loginForm)
     const password = document.getElementById('password').value;
     login(email, password);
   });
+}
+
+if (logOutBtn) logOutBtn.addEventListener('click', logout);
