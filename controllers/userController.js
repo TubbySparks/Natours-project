@@ -17,9 +17,17 @@ exports.getMe = (req, res, next) => {
 };
 
 exports.updateMe = catchAsync(async (req, res, next) => {
+  console.log(req.file);
+  console.log(req.body);
+
   // 1) Create error if user posts password data
   if (req.body.password || req.body.passwordConfirm) {
-    return next(new AppError('This route is not for password updates, please use /updateMyPassword', 400));
+    return next(
+      new AppError(
+        'This route is not for password updates, please use /updateMyPassword',
+        400
+      )
+    );
   }
 
   // 2) Filtered out unwanted field names that are not allowed to be updated
