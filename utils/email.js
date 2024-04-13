@@ -2,6 +2,29 @@ const nodemailer = require('nodemailer');
 const pug = require('pug');
 const htmlToText = require('html-to-text');
 
+// var transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'tunbosunde2019@gmail.com',
+//     pass: 'rziw selz hfpe vcep',
+//   },
+// });
+
+// var mailOptions = {
+//   from: 'tunbosunde2019@gmail.com',
+//   to: 'tubbysparks20@gmail.com',
+//   subject: 'Sending Email using Node.js',
+//   text: 'This is the email sent for learning!',
+// };
+
+// transporter.sendMail(mailOptions, function (error, info) {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log('Email sent: ' + info.response);
+//   }
+// });
+
 module.exports = class Email {
   constructor(user, url) {
     this.to = user.email;
@@ -13,7 +36,13 @@ module.exports = class Email {
   newTransport() {
     if (process.env.NODE_ENV === 'production') {
       // Sendgrid
-      return 1;
+      return nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+          user: process.env.GMAIL_USERNAME,
+          pass: process.env.GMAIL_PASSWORD,
+        },
+      });
     }
 
     return nodemailer.createTransport({
