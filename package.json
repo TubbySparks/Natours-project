@@ -44,5 +44,9 @@
   "devDependencies": {
     "lodash": "^4.17.21",
     "parcel-bundler": "^1.12.5"
+  },
+  "optionalDependencies": {
+    "@img/sharp-win32-x64": "^0.33.2",
+    "@img/sharp-linux-arm": "^0.33.2"
   }
 }
