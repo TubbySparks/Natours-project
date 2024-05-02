@@ -20,6 +20,7 @@
     "bcryptjs": "^2.4.3",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "express-mongo-sanitize": "^2.2.0",
@@ -40,14 +41,14 @@
     "xss-clean": "^0.1.4"
   },
   "engines": {
-    "node": ">=20.2.0"
+    "node": "^20"
   },
   "devDependencies": {
     "lodash": "^4.17.21",
     "parcel-bundler": "^1.12.5"
   },
   "optionalDependencies": {
-    "@img/sharp-win32-x64": "^0.33.2",
-    "@img/sharp-linux-arm": "^0.33.2"
+    "@img/sharp-linux-arm": "^0.33.2",
+    "@img/sharp-win32-x64": "^0.33.2"
   }
 }
