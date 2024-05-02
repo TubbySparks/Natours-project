@@ -23,6 +23,9 @@ const viewRouter = require('./routes/viewRoutes');
 // Start Express App
 const app = express();
 
+// Trust Proxy
+app.enable('trust proxy');
+
 app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
